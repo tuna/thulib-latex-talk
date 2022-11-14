@@ -189,6 +189,38 @@
         \item 推荐使用在线工具绘制后导出代码：\LaTeX{} Table Generator \link{https://www.tablesgenerator.com/latex_tables}
       \end{itemize}
     \end{frame}
+
+    \begin{frame}[fragile]{引用和参考文献}
+      \begin{columns}
+        \begin{column}{0.45\textwidth}
+          \begin{itemize}
+            \item \LaTeX{} 中的参考文献由\emph{文献数据库}（即 |.bib| 文件）生成
+            \item 向数据库添加文献条目的方法：
+              \begin{itemize}
+                \item 使用 Mendely、Zotero、NoteExpress 等软件导出为 |.bib| 文件
+                \item 从 Google Scholar、MathSciNet、ACM DL 等在线数据库导出
+                \item 手工编写条目（不推荐）
+              \end{itemize}
+          \end{itemize}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+          \begin{lstlisting}[basicstyle=\footnotesize\ttfamily]
+    @article{mellinger1996laser,
+      author     = {Mellinger, A and Vidal, C R and Jungen, {Ch}},
+      title      = {Laser reduced fluorescence study of the carbon monoxide nd triplet Rydberg series},
+      journal    = {J Chem Phys},
+      year       = {1996},
+      volume     = {104},
+      pages      = {8913--8921},
+    }
+            \end{lstlisting}
+        \end{column}
+      \end{columns}
+      \begin{itemize}
+        \item 在正文中使用 |\cite{key1, key2}| 引用条目，并在最后使用 |\bibliography{bibfile}| 命令打印参考文献列表
+        \item \BibTeX{} 可生成各种不同格式的引用和参考文献（需要宏包支持）：APA、MLA、GB/T 7714 等
+        \end{itemize}
+    \end{frame}
     
     \begin{frame}[fragile]
       \frametitle{宏包推荐（\textbf{先读文档}后使用）}

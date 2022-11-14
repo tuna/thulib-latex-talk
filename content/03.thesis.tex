@@ -10,7 +10,7 @@
   \begin{itemize}
   \item 最早由王磊于 2004年4月发布，2005 年薛瑞尼接手维护，2018年起李泽平为主力开发者，2020年起由TUNA维护
   \item 最新正式版：\ThuThesisVersion\ (\ThuThesisDate)
-  \item 全面支持最新的本科、硕士、博士、博士后论文格式（2021年3月最新版《清华大学研究生学位论文写作指南》），获研究生院官方推荐 \link{http://yjsy.cic.tsinghua.edu.cn/docinfo/board/boarddetail.jsp?columnId=001050603&parentColumnId=0010506&itemSeq=5365}
+  \item 全面支持最新的本科、硕士、博士、博士后论文格式（2022年9月最新版《清华大学研究生学位论文写作指南》），获研究生院官方推荐 \link{http://yjsy.cic.tsinghua.edu.cn/docinfo/board/boarddetail.jsp?columnId=001050603&parentColumnId=0010506&itemSeq=5365}
   \end{itemize}
   \begin{figure}[htbp]
     \centering
@@ -122,18 +122,14 @@
 
 \begin{frame}[fragile]{参考文献}
   \begin{itemize}
-    \item 使用 \BibTeX
+    \item 使用 \BibTeX 和 \pkg{natbib} 宏包
       \begin{itemize}
-        \item 使用文献管理软件导出 bib 文件
-          \begin{itemize}
-            \item Mendeley, NoteExpress
-          \end{itemize}
-        \item 使用 bibtex 生成参考文献列表
-        \item 本科生文献翻译/阅读报告参考文献与正文独立
+        \item 本科生文献翻译/阅读报告的参考文献与正文独立
+        \item 推荐使用 |latexmk| 编译以保证参考文献生成正确
       \end{itemize}
     \item 模板支持两种引用方式：
       \begin{itemize}
-        \item 顺序编码制，其中包含两种模式：
+        \item 顺序编码制（默认），其中包含两种模式：
         \begin{itemize}
           \item 上标模式：如“在许多文献\textsuperscript{[12-13]}中……”
           \begin{lstlisting}[basicstyle=\ttfamily]
