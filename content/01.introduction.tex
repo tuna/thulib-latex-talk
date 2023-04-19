@@ -211,29 +211,29 @@
       \begin{itemize}
         \item \TeX{}实用工具大集合：引擎、宏包、文档等
         \item 常见\TeX{}发行版：
-          \alert{\TL}, \CTeX, \MiKTeX, \MacTeX
+          \alert{\TL{} / \MacTeX}, \CTeX, \MiKTeX
       \end{itemize}
     \item \TL
       \begin{itemize}
-        \item 跨平台：Windows, Linux, macOS (\MacTeX)
+        \item 跨平台：Windows、Linux、macOS（二次打包后称为 \MacTeX）
         \item 每年四月发布以年份命名的新版本，当前为 \TL \TLVersion
       \end{itemize}
     \item \MiKTeX
       \begin{itemize}
         \item 最早专为 Windows 开发，现亦有 Linux 和 macOS 版本
-        \item 个人维护
+        \item 由 Christian Schenk 个人维护，轻量安装，滚动更新
       \end{itemize}
     \item \CTeX
       \begin{itemize}
-        \item 中科院吴凌云研究员基于 \MiKTeX 开发
-        \item 极大的方便了中文 \TeX 用户
-        \item 2012 年之后停止开发，不建议再使用
+        \item 中科院吴凌云研究员基于 \MiKTeX 开发，并打包 WinEdt 等多种工具
+        \item 在早期极大地方便了 Windows 上的中文 \TeX 用户
+        \item 2012-2022 年暂停开发，目前已经恢复更新
       \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{下载}
+  \frametitle{下载 \TL}
   \begin{itemize}
     \item 注意!
       \begin{itemize}
@@ -262,7 +262,7 @@ install-tl-unx.tar.gz: OK
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{安装}
+  \frametitle{安装 \TL}
   \begin{itemize}
     \item Windows
       \begin{itemize}
@@ -289,7 +289,7 @@ sudo chown yourname:yourname /usr/local/texlive
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{安装后配置（仅 Linux）}
+  \frametitle{\TL 安装后配置（仅 Linux）}
   \begin{itemize}
     \item
       添加环境变量到 \nolinkurl{~/.bashrc} 文件：
@@ -377,7 +377,7 @@ fc-cache -fsv
     \end{itemize}
   \end{exampleblock}
   % \vspace*{-3mm}
-  \begin{exampleblock}{\TL}
+  \begin{exampleblock}{\TL 或 \MacTeX}
     % \vspace*{-3mm}
     \begin{itemize}
       \item （Windows）开始菜单里找 TeX Live Manager
