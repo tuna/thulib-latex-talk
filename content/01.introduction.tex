@@ -292,15 +292,15 @@ sudo chown yourname:yourname /usr/local/texlive
   \frametitle{\TL 安装后配置（仅 Linux）}
   \begin{itemize}
     \item
-      添加环境变量到 \nolinkurl{~/.bashrc} 文件：
+      添加环境变量到 shell 配置（如 \nolinkurl{~/.bashrc}）：
       \begin{lstlisting}[language=bash]
 export PATH=/usr/local/texlive/current/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/current/texmf/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/current/texmf/doc/info:$INFOPATH
       \end{lstlisting}
   \item
-    打开 \TeXLive 指南中文版 “texlive-zh-cn.pdf”，
-    关注第 3.4 节
+    阅读 \TeXLive 指南中文版 |texlive-zh-cn.pdf|，
+    关注第 3.4 节：
       \begin{lstlisting}[basicstyle=\ttfamily]
 texdoc texlive-zh
       \end{lstlisting}
