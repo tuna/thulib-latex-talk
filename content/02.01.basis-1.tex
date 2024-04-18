@@ -239,12 +239,25 @@ V = \frac{4}{3}\pi r^3
 
 \begin{itemize}
   \item 可直接输入各类符号对应的 Unicode 字符（需要使用 UTF-8 编码）：
-  \begin{align*}
-    𝐹(𝑠) &= ℒ\{𝑓(𝑡)\} = ∫_0^∞ e^{−𝑠𝑡} 𝑓(𝑡) d𝑡 \\
-    𝐁 &= 𝜇_0(𝐌 + 𝐇)
-  \end{align*}
   \item 使用 |symbf| 等命令自动处理字母的粗体、斜体等变体，不必引入额外宏包。
 \end{itemize}
+
+\begin{columns}[c]
+  \begin{column}{0.55\textwidth}
+    \begin{lstlisting}[basicstyle=\small\firamath]
+\begin{align*}
+𝐹(𝑠) &= ∫_0^∞ e^{−𝑠𝑡} 𝑓(𝑡) d𝑡 \\
+𝐁 &= 𝜇_0(𝐌 + 𝐇)
+\end{align*}
+    \end{lstlisting}
+  \end{column}
+  \begin{column}{0.35\textwidth}
+  \begin{align*}
+    𝐹(𝑠) &= ∫_0^∞ e^{−𝑠𝑡} 𝑓(𝑡) d𝑡 \\
+    𝐁 &= 𝜇_0(𝐌 + 𝐇)
+  \end{align*}
+  \end{column}
+\end{columns}
 
 \begin{columns}[c]
   \begin{column}{0.45\textwidth}

@@ -10,7 +10,7 @@
   \begin{itemize}
   \item 最早由王磊于 2004年4月发布，2005 年薛瑞尼接手维护，2018年起李泽平为主力开发者，2020年起由TUNA维护
   \item 最新正式版：\ThuThesisVersion\ (\ThuThesisDate)
-  \item 全面支持最新的本科、研究生\footnote{更新到\ThuThesisGuideVersion{}发布的《清华大学研究生学位论文写作指南》，并支持若干院系的特殊要求}、博士后论文/报告格式，获研究生院官方推荐 \link{http://yjsy.cic.tsinghua.edu.cn/docinfo/board/boarddetail.jsp?columnId=001050603&parentColumnId=0010506&itemSeq=5365}
+  \item 全面支持最新的本科、研究生\footnote{更新到\ThuThesisGuideVersion{}发布的《清华大学研究生学位论文写作指南》，并支持若干院系的特殊要求}、博士后论文/报告格式，获研究生院官方推荐 \link{https://info2021.tsinghua.edu.cn/f/info/xxfb_fg/xnzx/template/detail?xxid=fa880bdf60102a29fbe3c31f36b76c7e}
   \end{itemize}
   \begin{figure}[htbp]
     \centering
@@ -23,36 +23,34 @@
 
 \begin{frame}[fragile]{手动安装\ThuThesis{}}
       \begin{columns}
-        \begin{column}{.7\textwidth}
+        \begin{column}{.75\textwidth}
   \begin{itemize}
     \item 下载最新正式版（推荐）
       \begin{itemize}
         \item CTAN 官方 \link{http://mirrors.ctan.org/macros/latex/contrib/thuthesis.zip}（发行版可使用自带更新机制）
         \item GitHub Releases \link{\ThuThesisLink/releases} 或 TUNA 镜像 \link{https://mirrors.tuna.tsinghua.edu.cn/github-release/\ThuThesisRepo/}
       \end{itemize}
-    \item 下载最新开发版（高级 / 想尝鲜 / 着急的用户）
+    \item 从 CI 下载最新开发版（高级 / 想尝鲜 / 着急的用户）
       \begin{itemize}
         \item \url{\ThuThesisLink}
-        \item 切换到 |dev| 分支，点右边栏
-          \href{\ThuThesisLink/archive/dev.zip}%
-          {Download ZIP} 按钮
+        \item 点击 master 分支的小绿勾——点击“build”一项旁边的“Details”链接进入 CI 详情
+        \item 点击左侧边栏“Summary”——滚动页面到最底下，从“Artifacts”中选择 |build-snapshot-release| 下载
+        \item 解压下载的 ZIP 文件，得到 |dist/thuthesis-v*.zip|
       \end{itemize}
   \end{itemize}
         \end{column}
-        \begin{column}{.3\textwidth}
+        \begin{column}{.25\textwidth}
           \begin{figure}[htbp]
             \centering
-            \includegraphics[width=.8\textwidth]{thuthesis-download.png}
+            \includegraphics[width=.95\textwidth]{thuthesis-download.png}
           \end{figure}
         \end{column}
       \end{columns}
   \begin{itemize}
     \item 编译与安装
       \begin{itemize}
-        \item 解压缩看文档 |README.md|
-        \item Windows: 文件夹空白处按Shift+鼠标右键，点击“在此处打开命令行窗口”
-        \item 模板文档类：|make cls| 编译 |thuthesis.dtx| $\Rightarrow$
-          |thuthesis.cls|
+        \item 解压缩 |thuthesis-v*.zip| 后\textbf{先看文档} |README.md|
+        \item 模板文档类：|thuthesis.cls| 已经编译好，无需额外操作
         \item 论文示例：|make thesis| 编译 |thuthesis-example.tex| $\Rightarrow$
         |thuthesis-example.pdf|
         \item 用户手册：|make doc| 编译 |thuthesis.dtx| $\Rightarrow$
@@ -91,6 +89,7 @@
   申请学位类型 & |degree-category|&|degree-category*|\\
   院系名称 & |department| & |department*|\\
   学科名称 & |discipline| & |discipline*|\\
+  专业领域 & |professional-field| & |professional-field*|\\
   导师 & |supervisor| & |supervisor*|\\
   副导师 & |associate-supervisor| & |associate-supervisor*|\\
   联合导师 & |joint-supervisor| & |joint-supervisor*|\\

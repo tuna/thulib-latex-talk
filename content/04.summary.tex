@@ -68,15 +68,15 @@
 \begin{frame}{一点人生的经验}
   \begin{itemize}
     \item 不要着急安装，先在 Overleaf 上熟悉各类操作
-    \item 不要过于相信网上的中文文档
+    \item 不要过于相信网上的中文教程/博客等
       \begin{itemize}
         \item 简单鉴别方法: 排版的好看程度
       \end{itemize}
     \item 实验室祖传的 \CTeX{} 套装多半是过时的，\ThuThesis{} 八成是老版本的
     \item 如果你要处理中文：
       \begin{itemize}
-        \item 使用 \XeLaTeX{}，使用 \XeLaTeX{}，使用 \XeLaTeX{}
-        \item 忘记 \pkg{CJK}，忘记 \pkg{CJK}，忘记 \pkg{CJK}
+        \item \textbf{使用 \XeLaTeX{}}，使用 \XeLaTeX{}，使用 \XeLaTeX{}
+        \item \textbf{忘记 \pkg{CJK}}，忘记 \pkg{CJK}，忘记 \pkg{CJK}
         \item 使用 \pkg{ctex} 宏包（2.0以上版本）（跟 \CTeX{} 套装仅仅是名字像）
       \end{itemize}
     \item 写一点，编译一次，减小排错搜索空间
@@ -110,7 +110,7 @@
   \end{frame}
 
 % 寻求帮助
-\begin{frame}{求助}
+\begin{frame}{寻求帮助}
   \begin{columns}[c]
     \begin{column}{.45\textwidth}
       \begin{itemize}
@@ -125,13 +125,30 @@
           \begin{itemize}
             \item 使用\textbf{英语}搜索
           \end{itemize}
-        \item ChatGPT......?
+        \item 大语言模型（LLM）助手......?
       \end{itemize}
     \end{column}
     \begin{column}{.45\textwidth}
       \includegraphics[width=\textwidth]{TFZsuperellipse-crop.png}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}{相关工具}
+  万变不离其宗，掌握 \LaTeX{} 后，可尝试不同工具适应自身需要、提高排版效率：
+  \begin{itemize}
+    \item 基于 \TeX{} 生态的辅助工具：
+    \begin{itemize}
+      \item Texifier \link{https://www.texifier.com/}（商业软件，仅 Apple 平台，原名 Texpad）：实时生成 \LaTeX{} 项目的 PDF 编译结果
+      \item LyX \link{https://www.lyx.org/}（自由软件）：所见即所得，使用 \TeX{} 语法，但部分功能受限
+      \item Tectonic \link{https://tectonic-typesetting.github.io/}（自由软件）：Rust 编写的、基于 \XeTeX{} 的现代 \LaTeX{} 引擎，编译速度快、安装体积小
+    \end{itemize}
+    \item 类 \TeX{} 的文档排版软件：
+    \begin{itemize}
+      \item GNU TeXmacs \link{https://zh.wikipedia.org/zh-cn/GNU_TeXmacs}（自由软件）：所见即所得，可转换为 \TeX{} 代码输出
+      \item typst \link{https://typst.com/}（自由软件）：新兴的使用 Rust 编写的排版系统，支持结构化语法、排版速度快、社区活跃，但生态尚待完善
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{你也可以帮助}
