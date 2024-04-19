@@ -79,16 +79,6 @@
   \let\hspace\@gobble
 }
 
-% From thuthesis user guide
-\makeatletter
-\def\psRotation#1(#2,#3)#4{%
-  \rput{#1}(#2,#3){%
-    \psellipticarc[linewidth=.4pt]{->}(0,-0.1)(0.6,0.15){120}{70}
-    \ifdim#1pt>\z@\rput[l]{*0}(0.675,0){#4}\else\rput[l](0.675,0){#4}\fi
-  }%
-}
-\makeatother
-
 \input{definitions}
 
 \newcommand\link[1]{\href{#1}{\faLink}}
