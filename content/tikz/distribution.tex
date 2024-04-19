@@ -1,0 +1,71 @@
+% !TeX encoding = UTF-8
+% !TeX program = latexmk
+% !TeX root = ../../latex-talk.tex
+
+% adapted from https://texample.net/tikz/examples/animated-distributions/
+
+\newcounter{tikzdistcnt}
+\setcounter{tikzdistcnt}{0}
+
+\newcommand{\distpic}[3]{
+
+    % Now draw the lower distribution showing the effect size:
+    \begin{scope}
+    % Shade the "reject H0" region red
+    \fill[red!30] (0.658,0)  -- plot[id=f3\thetikzdistcnt,domain=0.658:3,samples=50]
+        function {exp(-(x-#1)*(x-#1)*0.5/0.16)} --
+        (3,0) -- cycle;
+        % Shade the "accept H0" region blue
+    \fill[blue!30] (-2,0) -- plot[id=f4\thetikzdistcnt,domain=-2:0.658,samples=50]
+        function {exp(-(x-#1)*(x-#1)*0.5/0.16)} --
+        (0.658,0) -- cycle;
+
+        % Draw the shifted normal distribution:
+    \draw[blue!50!black,smooth,thick] plot[id=f1\thetikzdistcnt,domain=-2:3,samples=50]
+            function {exp(-(x-#1)*(x-#1)*0.5/0.16)};
+
+        % Draw the x-axis and put in some ticks and tick labels
+    \draw[->,black] (-2.2,0) -- (3.2,0);
+    \foreach \x in {-2,-1,0,1,2,3}
+            \draw (\x,0) -- (\x,-0.1) node[below] {$\x$};
+
+        % Draw and label the critical region boundary
+    \draw[red!50!black,very thick] (0.658,0) node[below,yshift=-0.5cm] {0.658}
+        -- (0.658,1.0);
+    \draw[red!50!black,very thick,->] (0.688,0.7) -- (2.7,0.7)
+        node[anchor=south west] {Reject  $H_0$};
+    \draw[red!50!black,very thick,->] (0.628,0.7) -- (-0.5,0.7)
+        node[anchor=south]{\parbox{1.5cm}{\raggedright Fail to reject $H_0$}};
+
+    % Add a label to the lower picture, when the alternative hypothesis is true:
+    \draw (-3,1) node[above,draw,fill=green!30] {$H_a$ is true:};
+
+        % Add labels showing the statistical power and the Type II error rate:
+    \draw[<-,thick] (1.5,0.1) -- (3,0.2) node[anchor=south west]
+        {Power = #2};
+    \draw[<-,thick] (0.4,0.1) -- (-1,0.2) node[left,yshift=0.3cm]
+        {\begin{tabular}{l}
+        $\beta$ = {#3} \\ (Type II error rate) \end{tabular}};
+    \end{scope}
+}
+
+\begin{animateinline}[
+  autoplay,
+  loop,
+  begin={
+    \begin{tikzpicture}[
+      scale=1,
+      font=\rmfamily\scriptsize,
+      every node/.style={scale=1,font=\rmfamily\scriptsize}
+  ]},
+  end={\stepcounter{tikzdistcnt}\end{tikzpicture}}
+]{3}
+  \distpic{0.5}{.346}{.654}\newframe
+  \distpic{0.7}{.542}{.458}\newframe
+  \distpic{0.9}{.727}{.273}\newframe
+  \distpic{1.1}{.865}{.135}\newframe
+  \distpic{1.3}{.946}{.054}\newframe
+  \distpic{1.5}{.982}{.018}\newframe
+  \distpic{1.7}{.995}{.005}\newframe
+  \distpic{1.9}{.999}{.001}
+\end{animateinline}

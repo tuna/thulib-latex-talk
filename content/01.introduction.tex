@@ -92,81 +92,32 @@
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}{\TeX{}排版举例：图形}
-  % From thuthesis user guide.
+\begin{frame}{\TeX{}排版举例：图形与图表}
+  \rmfamily
   \begin{minipage}[c]{0.3\linewidth}
-    \psset{unit=0.8cm}
-    \begin{pspicture}(-1.75,-3)(3.25,4)
-      \psline[linewidth=0.25pt](0,0)(0,4)
-      \rput[tl]{0}(0.2,2){$\vec e_z$}
-      \rput[tr]{0}(-0.9,1.4){$\vec e$}
-      \rput[tl]{0}(2.8,-1.1){$\vec C_{ptm{ext}}$}
-      \rput[br]{0}(-0.3,2.1){$\theta$}
-      \rput{25}(0,0){%
-      \psframe[fillstyle=solid,fillcolor=lightgray,linewidth=.8pt](-0.1,-3.2)(0.1,0)}
-      \rput{25}(0,0){%
-      \psellipse[fillstyle=solid,fillcolor=yellow,linewidth=3pt](0,0)(1.5,0.5)}
-      \rput{25}(0,0){%
-      \psframe[fillstyle=solid,fillcolor=lightgray,linewidth=.8pt](-0.1,0)(0.1,3.2)}
-      \rput{25}(0,0){\psline[linecolor=red,linewidth=1.5pt]{->}(0,0)(0.,2)}
-      \psRotation{0}(0,3.5){$\dot\phi$}
-      \psRotation{25}(-1.2,2.6){$\dot\psi$}
-      \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(0,2)
-      \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(3,-1)
-      \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(2.85,-0.95)
-      \psarc{->}{2.1}{90}{112.5}
-      \rput[bl](.1,.01){C}
-    \end{pspicture}
+    \input{content/tikz/linear}
   \end{minipage}\hspace{1cm}
   \begin{minipage}[t]{0.5\linewidth}
-    \psset{unit=0.3cm}
-    \begin{pspicture}(1,2)(18,14)
-      %\psgrid[gridcolor=lightgray,subgriddiv=0,subgridcolor=lightgray]
-      %
-      \psline[linewidth=1pt,linecolor=black](6,0.5)(6,14)
-      \psline[linewidth=1pt,linecolor=black](1,8.5)(6,7)
-      \psline[linewidth=1pt,linecolor=black](1.5,5.5)(11,8.5)
-      %
-      \rput(17,3){$x$}
-      \rput(5.5,13){$y$}
-      \rput(10.5,8.75){$z$}
-      \rput(11,7.1){$\vec{r}$}
-      %
-      \psline[linewidth=1.5pt,linecolor=black]{<->}(6,7)(6,11.25)
-      \rput(5.35,9.4){$R$}
-      \psline[linewidth=1.5pt,linecolor=Green]{->}(6.5,12)(4.75,12)
-      \rput(7.5,12.8){ $I d\vec{l}$}
-      %
-      \psellipse[doubleline=true,doublecolor=yellow,doublesep=3pt,linecolor=blue](6,7)(3,4.5)
-      \psline[linewidth=1pt,linecolor=black](6,7)(17.5,3.5)
-      \psline[linewidth=1.5pt,linecolor=black]{->}(6,11.38)(11.95,5.225)
-      %
-      \psarc[linewidth=1.5pt,linecolor=gray](6,8){3.4}{85}{95}
-      %
-      \psline[linewidth=1.5pt,linecolor=gray]{->}(12,5.15)(12,8.15)
-      \psline[linewidth=1.5pt,linecolor=black]{->}(12,5.15)(15,7.25)
-      \psline[linewidth=1.5pt,linecolor=gray]{->}(12,5.15)(15,4.25)
-      %
-      \psline[linewidth=1pt,linecolor=black](12,8.15)(15,7.25)(15,4.25)
-      %
-      \Cnode*[linecolor=black,radius=0.1cm](12,5.15){a}
-      \rput(11.5,4.5){ $P$}
-      %
-      \rput(12.5,8.9){$dB_y$}
-      \rput(14.5,3.4){$dB_x$}
-      \rput(15.5,8){ $d \boldmath{\vec{B}}$}
-      %
-      \psarc[linewidth=1pt]{<->}(12,5){5.5}{133}{161}
-      \rput(7.2,8.5){ $\theta$}
-    \end{pspicture}
-    \medskip
-
-    %\hspace{2cm}
+    \centering
+    \begin{circuitikz}[scale=0.8,every node/.style={scale=0.6},font=\rmfamily]\draw
+      (0,0) node[ground] {}
+          to[V=$e(t)$, *-*] (0,2) to[C=4<\nano\farad>] (2,2)
+          to[R, l_=.25<\kilo\ohm>, *-*] (2,0)
+      (2,2) to[R=1<\kilo\ohm>] (4,2)
+          to[C, l_=2<\nano\farad>, *-*] (4,0)
+      (5,0) to[I, i_=$a(t)$, -*] (5,2) -- (4,2)
+      (0,0) -- (5,0)
+      (0,2) -- (0,3) to[L, l=2<\milli\henry>] (5,3) -- (5,2)
+      {[anchor=south east] (0,2) node {1} (2,2) node {2} (4,2) node {3}}
+      ;
+    \end{circuitikz}
+    % \hspace{2cm}
     \begin{figure}[h]
       \centering
-      \includegraphics[height=.33\textheight]{dtmf.pdf}
+      \input{content/tikz/distribution}
     \end{figure}
   \end{minipage}
+  \sffamily
 \end{frame}
 
 \begin{frame}{\TeX{}排版举例：文档}
