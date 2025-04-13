@@ -1,0 +1,18 @@
+% !TeX root = ./thuthesis-example.tex
+
+\thusetup{
+  output = print,
+  title  = {清华大学学位论文 \LaTeX{} 模板\\使用示例文档},
+  title* = {An Introduction to \LaTeX{} Thesis Template of Tsinghua
+            University},
+  department = {计算机科学与技术系},
+  discipline  = {计算机科学与技术},
+  discipline* = {Computer Science and Technology},
+  author  = {薛瑞尼},
+  author* = {Xue Ruini},
+  supervisor  = {郑纬民, 教授},
+  supervisor* = {Professor Zheng Weimin},
+  associate-supervisor  = {陈文光, 教授},
+  associate-supervisor* = {Professor Chen Wenguang},
+  include-spine = false,
+}
