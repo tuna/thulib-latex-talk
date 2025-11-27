@@ -4,15 +4,15 @@ jobs:
   build_document:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Compile LaTeX document
-        uses: xu-cheng/texlive-action@v2
+        uses: xu-cheng/texlive-action@v3
         with:
           scheme: full
           run: |
             sed -i "s/fontset=ubuntu/fontset=fandol/g" latex-talk.tex
             latexmk latex-talk
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: talk-slides
           path: latex-talk.pdf
