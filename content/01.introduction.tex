@@ -53,7 +53,7 @@
       所见即所得 & 所见即所想，所想即所得 \\
       高级功能不易掌握 & 进阶难，但一般用不到 \\
       处理长文档需要丰富经验 & 和短文档处理基本无异 \\
-      花费大量时间调格式 & 无需担心格式，专心作者内容 \\
+      花费大量时间调格式 & 无需担心格式，专注写作内容 \\
       公式排版差强人意 & 尤其擅长公式排版 \\
       二进制格式，兼容性差 & 文本文件，易读、稳定 \\
       付费商业许可 & 自由免费使用 \\
@@ -174,9 +174,9 @@
       \end{itemize}
     \item \CTeX
       \begin{itemize}
-        \item 中科院吴凌云研究员基于 \MiKTeX 开发，并打包 WinEdt 等多种工具
+        \item 中科院吴凌云研究员基于 \MiKTeX 开发，并集成了 WinEdt 等工具
         \item 在早期极大地方便了 Windows 上的中文 \TeX 用户
-        \item 2012-2022 年暂停开发，目前已经恢复更新
+        \item 2012-2022 年间暂停开发，近年已恢复更新，最新为 3.1 系列
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -198,7 +198,7 @@
         \item {\footnotesize
           \url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/}
         }
-        \item 更多可见 \url{http://mirror.ctan.org/README.mirrors}
+        \item 更多可见 \url{https://ctan.org/mirrors}
       \end{itemize}
 
     \item 可选步骤：校验安装包
@@ -243,9 +243,9 @@ sudo chown yourname:yourname /usr/local/texlive
     \item
       添加环境变量到 shell 配置（如 \nolinkurl{~/.bashrc}）：
       \begin{lstlisting}[language=bash]
-export PATH=/usr/local/texlive/current/bin/x86_64-linux:$PATH
-export MANPATH=/usr/local/texlive/current/texmf/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/current/texmf/doc/info:$INFOPATH
+export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2026/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2026/texmf-dist/doc/info:$INFOPATH
       \end{lstlisting}
   \item
     阅读 \TeXLive 指南中文版 |texlive-zh-cn.pdf|，
@@ -262,7 +262,7 @@ texdoc texlive-zh
   \item
     \XeTeX\ 系统字体配置
     \begin{lstlisting}[language=bash]
-cp /usr/local/texlive/current/texmf-var/fonts/conf/texlive-fontconfig.conf \
+cp /usr/local/texlive/2026/texmf-var/fonts/conf/texlive-fontconfig.conf \
   /etc/fonts/conf.d/09-texlive.conf
 fc-cache -fsv
     \end{lstlisting}
@@ -273,7 +273,7 @@ fc-cache -fsv
       \item Fedora 用户可以直接下载 \link{https://copr.fedoraproject.org/coprs/fatka/texlive-dummy/}
     \end{itemize}
   \item 部分教程可参考:
-    \link{http://zhuanlan.zhihu.com/LaTeX/20069414}
+    \link{https://zhuanlan.zhihu.com/p/20069414}
     \link{https://stone-zeng.github.io/2018-05-13-install-texlive-ubuntu/}
   \end{itemize}
 \end{frame}
@@ -282,11 +282,11 @@ fc-cache -fsv
   \begin{itemize}
     \item \TeX{}编辑器
       \begin{itemize}
-        \item 专用编辑器：TeXworks、\alert{TeXStudio}、TeXmaker、WinEdt 等
+        \item 专用编辑器：TeXworks、\alert{TeXstudio}、TeXmaker、WinEdt 等
         \item 通用编辑器（安装 \LaTeX{} 插件）：Vim、Emacs、\alert{VS Code}、Sublime 等
       \end{itemize}
   \end{itemize}
-  \begin{exampleblock}{TeXStudio 配置}
+  \begin{exampleblock}{TeXstudio 配置}
     \begin{itemize}
       \item Options -> Configure TeXstudio
         \begin{itemize}
@@ -341,7 +341,7 @@ fc-cache -fsv
         \item 可直接使用 \pkg{ctex} 宏集和 \pkg{thuthesis} 文档模板，中文排版体验较好
         \item TeXPage、清华 Overleaf 均内置较多中文字体
       \end{itemize}
-    \item 容量有一定限制
+    \item 容量/编译时间有一定限制，商业平台需要付费升级
   \end{itemize}
 \end{frame}
 

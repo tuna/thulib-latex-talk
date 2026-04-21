@@ -50,6 +50,14 @@
 \usepackage{xspace}
 \usepackage{amsmath}
 \usepackage{unicode-math}
+\usepackage[
+  math=false,
+  RMstyle={Text,Semibold},
+  SSstyle={Text,Semibold},
+  TTstyle={Text,Semibold},
+  DefaultFeatures={Ligatures=Common}
+]{plex-otf}
+\renewcommand*\familydefault{\sfdefault}
 \usepackage{calligra}
 \usepackage{fontspec}
 \usepackage{ccicons}
@@ -108,7 +116,7 @@
 
 \title{如何使用 \LaTeX 排版论文}
 
-\author[陈晟祺]{\vspace{1em} 陈晟祺\\ \texttt{shengqi.chen@tuna.tsinghua.edu.cn}}
+\author[陈晟祺]{\texorpdfstring{\vspace{1em} 陈晟祺\\ \texttt{shengqi.chen@tuna.tsinghua.edu.cn}}{陈晟祺 <shengqi.chen@tuna.tsinghua.edu.cn>}}
 \institute{清华大学 TUNA 协会}
 \date[清华大学图书馆培训讲座]{\the\year 年 \the\month 月}
 \subject{LaTeX, 论文排版, ThuThesis}
@@ -121,7 +129,7 @@
   pdfsubject = {清华大学图书馆培训讲座},
   pdfauthor = {Shengqi Chen, Justin Wong, Alick Zhao},
   pdfcopyright = {Copyright (C) 2015-\the\year by Alick Zhao, Justin Wong and Shengqi Chen. Licensed under CC-BY-SA 4.0. Some rights reserved.},
-  pdflicenseurl = {http://creativecommons.org/licenses/by-sa/4.0/},
+  pdflicenseurl = {https://creativecommons.org/licenses/by-sa/4.0/},
   unicode            = true,
   psdextra           = true,
   pdfdisplaydoctitle = true
@@ -147,7 +155,7 @@
           \end{itemize}
         \item 本幻灯片参考：
           \begin{itemize}
-            \item \url{http://github.com/alick/fad-texlive-talk}
+            \item \url{https://github.com/alick/fad-texlive-talk}
             \item \url{https://github.com/stone-zeng/latex-talk}
             \item \ThuThesis{} 使用示例文档 v\ThuThesisVersion
           \end{itemize}

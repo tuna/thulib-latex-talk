@@ -27,15 +27,14 @@
   \begin{itemize}
     \item 下载最新正式版（推荐）
       \begin{itemize}
-        \item CTAN 官方 \link{http://mirrors.ctan.org/macros/latex/contrib/thuthesis.zip}（发行版可使用自带更新机制）
+        \item CTAN 官方 \link{https://mirror.ctan.org/macros/latex/contrib/thuthesis.zip}（发行版可使用自带更新机制）
         \item GitHub Releases \link{\ThuThesisLink/releases} 或 TUNA 镜像 \link{https://mirrors.tuna.tsinghua.edu.cn/github-release/\ThuThesisRepo/}
       \end{itemize}
     \item 从 CI 下载最新开发版（高级 / 想尝鲜 / 着急的用户）
       \begin{itemize}
-        \item \url{\ThuThesisLink}
-        \item 点击 master 分支的小绿勾——点击“build”一项旁边的“Details”链接进入 CI 详情
-        \item 点击左侧边栏“Summary”——滚动页面到最底下，从“Artifacts”中选择 |build-snapshot-release| 下载
-        \item 解压下载的 ZIP 文件，得到 |dist/thuthesis-v*.zip|
+        \item 打开 GitHub Actions 页面：\url{\ThuThesisLink/actions}
+        \item 进入最新一次成功的构建，从页面底部的 Artifacts 下载 |build-snapshot-release|
+        \item 解压下载的 ZIP 文件，在 |dist/| 目录下找到 |thuthesis-v*.zip|
       \end{itemize}
   \end{itemize}
         \end{column}

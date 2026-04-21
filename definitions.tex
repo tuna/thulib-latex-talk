@@ -15,6 +15,11 @@
 }
 \newfontfamily\useTIPAfont{TeX Gyre Termes}
 \newfontfamily{\firamath}{FiraMath-Regular.otf}
+\IfFontExistsTF{FreeMono}{
+    \newfontfamily{\unimathcodefont}{FreeMono}[Scale=MatchLowercase]
+}{
+    \newfontfamily{\unimathcodefont}{FiraMath-Regular.otf}
+}
 
 % xeCJK conf setup
 \renewcommand\CJKfamilydefault{\CJKsfdefault} % for slides
@@ -45,7 +50,7 @@
 
 \def\TeXLive{\TeX{} Live\xspace}
 \let\TL=\TeXLive
-\newcommand{\TLVersion}{2025}
+\newcommand{\TLVersion}{2026}
 \newcommand{\ThuThesis}{\textsc{ThuThesis}\xspace}
 \newcommand{\ThuThesisVersion}{7.6.0}
 \newcommand{\ThuThesisDate}{2025/03/28}

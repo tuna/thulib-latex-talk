@@ -20,7 +20,7 @@
       \begin{itemize}
         \item plain \TeX{}：Knuth 最早的实现，底层、细节较多
         \item \LaTeX{}：排版科技类文章的事实标准，相对易用
-        \item Con\TeX t：基于 \LuaTeX{} 实现，便于实现高级功能
+        \item Con\TeX t：主要基于 \LuaTeX{}，便于实现高级功能
       \end{itemize}
 
     \item \textbf{程序}：引擎 + dump 后的格式代码
@@ -226,7 +226,7 @@ V = \frac{4}{3}\pi r^3
       \item 运行 \texttt{texdoc symbols} 查看符号表
       \item S. Pakin. \emph{The Comprehensive \LaTeX{} Symbol List}
             \link{https://ctan.org/pkg/comprehensive}
-      \item 手写识别（有用但不全面）：Detexify \link{http://detexify.kirelabs.org}
+      \item 手写识别（有用但不全面）：Detexify \link{https://detexify.kirelabs.org}
     \end{itemize}
 \item MathType 也可以使用和导出 \LaTeX{} 公式（不推荐）
 \end{itemize}
@@ -243,8 +243,8 @@ V = \frac{4}{3}\pi r^3
 \end{itemize}
 
 \begin{columns}[c]
-  \begin{column}{0.55\textwidth}
-    \begin{lstlisting}[basicstyle=\small\firamath]
+  \begin{column}{0.6\textwidth}
+    \begin{lstlisting}[basicstyle=\small\unimathcodefont]
 \begin{align*}
 𝐹(𝑠) &= ∫_0^∞ e^{−𝑠𝑡} 𝑓(𝑡) d𝑡 \\
 𝐁 &= 𝜇_0(𝐌 + 𝐇)
@@ -261,7 +261,7 @@ V = \frac{4}{3}\pi r^3
 
 \begin{columns}[c]
   \begin{column}{0.45\textwidth}
-    \begin{lstlisting}[basicstyle=\ttfamily]
+    \begin{lstlisting}[basicstyle=\small\unimathcodefont]
 \begin{align*}
 \symbf{\beta} &= \beta \symbf{I} \\
 \symbf{a} &= a \symbf{I}
