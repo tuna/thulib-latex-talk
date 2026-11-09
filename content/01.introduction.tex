@@ -40,25 +40,15 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{和 Word 对比}
-  注：术业有专攻，评价需客观
-  \begin{table}[h]
-    \centering
-    \rowcolors[]{1}{primaryL}{primaryL!40}
-    \begin{tabular}{c|c}
-      Microsoft\textsuperscript{\textregistered}  Word & \LaTeX \\
-      \hline
-      字处理工具 & 专业排版软件 \\
-      容易上手，简单直观 & 容易上手 \\
-      所见即所得 & 所见即所想，所想即所得 \\
-      高级功能不易掌握 & 进阶难，但一般用不到 \\
-      处理长文档需要丰富经验 & 和短文档处理基本无异 \\
-      花费大量时间调格式 & 无需担心格式，专注写作内容 \\
-      公式排版差强人意 & 尤其擅长公式排版 \\
-      二进制格式，兼容性差 & 文本文件，易读、稳定 \\
-      付费商业许可 & 自由免费使用 \\
-    \end{tabular}
-  \end{table}
+\begin{frame}{和 Word 的对比}
+  Microsoft\textsuperscript{\textregistered}  Word 是一个所见即所得 (WYSIWYG) 的文本处理软件，相比之下，\LaTeX 是一个以文本文件为输入的专业排版软件。
+
+  \begin{itemize}
+    \item 特别擅长：数学公式，段落放置及多栏布局，图片表格自动定位
+    \item 文档结构作为“一等公民”，简单方便的引用（文档内部引用，参考文献引用）、目录生成
+    \item 输出稳定，不易因为局部修改破坏全局排版效果
+    \item 自由免费使用
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{\TeX{}排版举例：公式}
@@ -153,6 +143,26 @@
 \end{frame}
 
 \subsection{安装}
+
+\begin{frame}[fragile]
+  \frametitle{使用在线协作平台}
+  \begin{itemize}
+    \item 通过在线平台编辑、编译
+      \begin{itemize}
+        \item Overleaf：\url{https://www.overleaf.com/}
+        \item TeXPage：\url{https://www.texpage.com/}
+        \item 清华大学 Overleaf：\url{https://overleaf.tsinghua.edu.cn/}
+      \end{itemize}
+    \item 免去安装、升级等一系列烦恼
+    \item 可以多人协作
+    \item 支持中文，可能需要自己上传字体
+      \begin{itemize}
+        \item 可直接使用 \pkg{ctex} 宏集和 \pkg{thuthesis} 文档模板，中文排版体验较好
+        \item TeXPage、清华 Overleaf 均内置较多中文字体
+      \end{itemize}
+    \item 容量/编译时间有一定限制，商业平台需要付费升级
+  \end{itemize}
+\end{frame}
 
 \begin{frame}{如何安装 \hologo{(La)TeX}？}
   \begin{itemize}
@@ -323,26 +333,6 @@ fc-cache -fsv
       \item 在 WinEdt 里 MiKTeX Options -> Packages
     \end{itemize}
   \end{exampleblock}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{使用在线协作平台}
-  \begin{itemize}
-    \item 通过在线平台编辑、编译
-      \begin{itemize}
-        \item Overleaf：\url{https://www.overleaf.com/}
-        \item TeXPage：\url{https://www.texpage.com/}
-        \item 清华大学 Overleaf：\url{https://overleaf.tsinghua.edu.cn/}
-      \end{itemize}
-    \item 免去安装、升级等一系列烦恼
-    \item 可以多人协作
-    \item 支持中文，可能需要自己上传字体
-      \begin{itemize}
-        \item 可直接使用 \pkg{ctex} 宏集和 \pkg{thuthesis} 文档模板，中文排版体验较好
-        \item TeXPage、清华 Overleaf 均内置较多中文字体
-      \end{itemize}
-    \item 容量/编译时间有一定限制，商业平台需要付费升级
-  \end{itemize}
 \end{frame}
 
 %\begin{frame}
