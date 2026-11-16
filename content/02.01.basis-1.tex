@@ -35,9 +35,8 @@
 \begin{frame}[fragile]
   \frametitle{编译}
   \begin{itemize}
-    \item 现代 \TeX{} 引擎均可直接生成 PDF
-    \item 命令行
-
+    \item Overleaf: 默认情况下\textbf{保存}自动编译
+    \item 本地命令行：现代 \TeX{} 引擎均可直接生成 PDF
       \begin{itemize}
         \item |pdflatex|/|xelatex|/|lualatex| + |<文件名>[.tex]|
         \item 多次编译：每次均需要读取并处理中间文件
@@ -96,85 +95,56 @@ $ a^2-b^2=(a+b)(a-b)$
   \end{columns}
 \end{itemize}
 \end{frame}
-
-\begin{frame}[fragile]{\LaTeX{} 常用命令}
-  \begin{exampleblock}{简单命令}
-\centering
-\footnotesize
-  \begin{tabular}{llll}
-    \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
-    章 & 节 & 小节 & 带题头段落 \\\hline
-    \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
-   居中对齐         &  强调      & 原样输出   & 超链接 \\\hline
-  \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
-   脚注 & 列表条目 & 标题 & 插入图片 \\\hline
-  \cmd{label} & \cmd{cite} & \cmd{ref} \\
-  标号 & 引用参考文献 & 引用图表公式等\\\hline
-  \end{tabular}
-\end{exampleblock}
-\end{frame}
-\begin{frame}[fragile]{\LaTeX{} 常用命令}
-\begin{exampleblock}{环境}
-\centering
-\footnotesize
-\begin{tabular}{lll}
-  \env{table} & \env{figure} & \env{equation}\\
-  表格 & 图片 & 公式 \\\hline
-  \env{itemize} & \env{enumerate} & \env{description}\\
-  无编号列表 & 编号列表 & 描述 \\\hline
-\end{tabular}
-\end{exampleblock}
-\end{frame}
 %
-\begin{frame}{\LaTeX{}命令举例}
-\cmdxmp{chapter}{前言}{\heiti 第 1 章\hspace{1em} 前言}
-\cmdxmp{section[精简标题]}{这个题目实在太长了放到目录里面不太好看}{\heiti 1.1
-  \hspace{1em} 这个题目实在太长了放到目录里面不太好看}
-\cmdxmp{footnote}{我是可爱的脚注}{前方高能\footnote{我是可爱的脚注}}
-\end{frame}
-
-\begin{frame}[fragile]{\LaTeX{} 环境举例}
-  \begin{minipage}{0.4\linewidth}
-    \begin{lstlisting}[basicstyle=\ttfamily\small]
-\begin{itemize}
-  \item 一条
-  \item 次条
-  \item 这一条可以分为 ...
-    \begin{itemize}
-      \item 子一条
-    \end{itemize}
-\end{itemize}
-\end{lstlisting}
-  \end{minipage}\hspace{1.5cm}
-  \begin{minipage}{0.4\linewidth}
-\begin{itemize}
-  \item 一条
-  \item 次条
-  \item 这一条可以分为 ...
-    \begin{itemize}
-      \item 子一条
-    \end{itemize}
-\end{itemize}
-  \end{minipage}
-\medskip
-
-  \begin{minipage}{0.4\linewidth}
-\begin{lstlisting}
-\begin{enumerate}
-  \item 一条
-  \item 次条
-  \item 再条
-\end{enumerate}
-\end{lstlisting}
-  \end{minipage}\hspace{1.5cm}
-  \begin{minipage}{0.4\linewidth}
-\begin{enumerate}
-  \item 一条
-  \item 次条
-  \item 再条
-\end{enumerate}
-  \end{minipage}
-\end{frame}
+% \begin{frame}{\LaTeX{}命令举例}
+% \cmdxmp{chapter}{前言}{\heiti 第 1 章\hspace{1em} 前言}
+% \cmdxmp{section[精简标题]}{这个题目实在太长了放到目录里面不太好看}{\heiti 1.1
+%   \hspace{1em} 这个题目实在太长了放到目录里面不太好看}
+% \cmdxmp{footnote}{我是可爱的脚注}{前方高能\footnote{我是可爱的脚注}}
+% \end{frame}
+% 
+% \begin{frame}[fragile]{\LaTeX{} 环境举例}
+%   \begin{minipage}{0.4\linewidth}
+%     \begin{lstlisting}[basicstyle=\ttfamily\small]
+% \begin{itemize}
+%   \item 一条
+%   \item 次条
+%   \item 这一条可以分为 ...
+%     \begin{itemize}
+%       \item 子一条
+%     \end{itemize}
+% \end{itemize}
+% \end{lstlisting}
+%   \end{minipage}\hspace{1.5cm}
+%   \begin{minipage}{0.4\linewidth}
+% \begin{itemize}
+%   \item 一条
+%   \item 次条
+%   \item 这一条可以分为 ...
+%     \begin{itemize}
+%       \item 子一条
+%     \end{itemize}
+% \end{itemize}
+%   \end{minipage}
+% \medskip
+% 
+%   \begin{minipage}{0.4\linewidth}
+% \begin{lstlisting}
+% \begin{enumerate}
+%   \item 一条
+%   \item 次条
+%   \item 再条
+% \end{enumerate}
+% \end{lstlisting}
+%   \end{minipage}\hspace{1.5cm}
+%   \begin{minipage}{0.4\linewidth}
+% \begin{enumerate}
+%   \item 一条
+%   \item 次条
+%   \item 再条
+% \end{enumerate}
+%   \end{minipage}
+% \end{frame}
 %
 
 \begin{frame}[fragile]{\LaTeX{} 数学公式}

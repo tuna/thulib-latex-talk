@@ -6,6 +6,13 @@
 
 \subsection{\TeX 与 \LaTeX}
 
+\begin{frame}{什么是 \LaTeX}
+  \pause
+  是一个纯文本格式的标记语言 (Mark up language)，通过编译可以生成高质量的排版文档。$^{***}$
+
+  \sout{写论文的时候必须要用}
+\end{frame}
+
 \begin{frame}[fragile]{\TeX 与 \LaTeX}
   \begin{columns}[T]
     \column{.8\textwidth}
@@ -68,19 +75,19 @@
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}{\TeX{}排版举例：公式}
-  \begin{exampleblock}{编号多行公式}
-    % Taken from Mathmode.tex
-    \begin{multline}
-    A=\lim_{n\rightarrow\infty}\Delta x\left(a^{2}+\left(a^{2}+2a\Delta x+\left(\Delta x\right)^{2}\right)\right.\label{eq:reset}\\
-    +\left(a^{2}+2\cdot2a\Delta x+2^{2}\left(\Delta x\right)^{2}\right)\\
-    +\left(a^{2}+2\cdot3a\Delta x+3^{2}\left(\Delta x\right)^{2}\right)\\
-    +\ldots\\
-    \left.+\left(a^{2}+2\cdot(n-1)a\Delta x+(n-1)^{2}\left(\Delta x\right)^{2}\right)\right)\\
-    =\frac{1}{3}\left(b^{3}-a^{3}\right)
-  \end{multline}
-\end{exampleblock}
-\end{frame}
+% \begin{frame}{\TeX{}排版举例：公式}
+%   \begin{exampleblock}{编号多行公式}
+%     % Taken from Mathmode.tex
+%     \begin{multline}
+%     A=\lim_{n\rightarrow\infty}\Delta x\left(a^{2}+\left(a^{2}+2a\Delta x+\left(\Delta x\right)^{2}\right)\right.\label{eq:reset}\\
+%     +\left(a^{2}+2\cdot2a\Delta x+2^{2}\left(\Delta x\right)^{2}\right)\\
+%     +\left(a^{2}+2\cdot3a\Delta x+3^{2}\left(\Delta x\right)^{2}\right)\\
+%     +\ldots\\
+%     \left.+\left(a^{2}+2\cdot(n-1)a\Delta x+(n-1)^{2}\left(\Delta x\right)^{2}\right)\right)\\
+%     =\frac{1}{3}\left(b^{3}-a^{3}\right)
+%   \end{multline}
+% \end{exampleblock}
+% \end{frame}
 
 \begin{frame}{\TeX{}排版举例：图形与图表}
   \begin{minipage}[c]{0.3\linewidth}
@@ -151,7 +158,7 @@
       \begin{itemize}
         \item Overleaf：\url{https://www.overleaf.com/}
         \item TeXPage：\url{https://www.texpage.com/}
-        \item 清华大学 Overleaf：\url{https://overleaf.tsinghua.edu.cn/}
+        \item \textbf{清华大学 Overleaf}：\url{https://overleaf.tsinghua.edu.cn/}
       \end{itemize}
     \item 免去安装、升级等一系列烦恼
     \item 可以多人协作
@@ -161,142 +168,165 @@
         \item TeXPage、清华 Overleaf 均内置较多中文字体
       \end{itemize}
     \item 容量/编译时间有一定限制，商业平台需要付费升级
-    \item 中文文档需要把编译器改为 \XeLaTeX{}
+    \item 中文文档需要把编译器改为 \XeLaTeX{}: 设置 $\rightarrow$ 编译器 $\rightarrow$ XeLaTeX
   \end{itemize}
 \end{frame}
 
 \begin{frame}{如何安装 \hologo{(La)TeX}？}
+  \TeX{}发行版（Distro）
   \begin{itemize}
-    \item \TeX{}发行版（Distro）
-      \begin{itemize}
-        \item \TeX{}实用工具大集合：引擎、宏包、文档等
-        \item 常见\TeX{}发行版：
-          \alert{\TL{} / \MacTeX}, \CTeX, \MiKTeX
-      \end{itemize}
-    \item \TL
-      \begin{itemize}
-        \item 跨平台：Windows、Linux、macOS（二次打包后称为 \MacTeX）
-        \item 每年四月左右发布以年份命名的新版本，当前为 \TL \TLVersion
-      \end{itemize}
-    \item \MiKTeX
-      \begin{itemize}
-        \item 最早专为 Windows 开发，现亦有 Linux 和 macOS 版本
-        \item 由 Christian Schenk 个人维护，轻量安装，滚动更新
-      \end{itemize}
-    \item \CTeX
-      \begin{itemize}
-        \item 中科院吴凌云研究员基于 \MiKTeX 开发，并集成了 WinEdt 等工具
-        \item 在早期极大地方便了 Windows 上的中文 \TeX 用户
-        \item 2012-2022 年间暂停开发，近年已恢复更新，最新为 3.1 系列
-      \end{itemize}
+    \item \TeX{}实用工具大集合：引擎、宏包、文档等
+    \item 常见\TeX{}发行版：
+      \alert{\TL{} / \MacTeX}, \CTeX, \MiKTeX
+  \end{itemize}
+    
+  注意：部分 Linux 发行版会锁定 \TeX{} 发行版的版本，导致宏包更新不及时，建议使用官方安装包。
+
+  \begin{itemize}
+    \item 完整安装包 (6GB)：{\footnotesize \url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}}
+    \item ArchLinux: \texttt{texlive} \link{https://wiki.archlinux.org/title/TeX\_Live}
+    \item Nixpkgs: \texttt{nixpkgs.texliveFull} \link{https://wiki.nixos.org/wiki/TexLive}
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{下载 \TL}
-  \begin{itemize}
-    \item 注意!
-      \begin{itemize}
-        \item Windows 下不要放在带有中文的路径中
-      \end{itemize}
-    \item 离线安装镜像（约 6GB 大小）
-      \begin{itemize}
-        \item {\footnotesize
-          \url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}}
-      \end{itemize}
-    \item 在线安装包 （和相应的校验文件，以 .sha256 结尾）
-      \begin{itemize} % several mirror url
-        \item {\footnotesize
-          \url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/}
-        }
-        \item 更多可见 \url{https://ctan.org/mirrors}
-      \end{itemize}
-
-    \item 可选步骤：校验安装包
-      \begin{lstlisting}[language=tex]
-LANG=C sha256sum --check install-tl-unx.tar.gz.sha256
-install-tl-unx.tar.gz: OK
-      \end{lstlisting}
-
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{安装 \TL}
-  \begin{itemize}
-    \item Windows
-      \begin{itemize}
-        \item 解压或挂载下载的 ISO，运行 |install-tl-windows.bat|
-        \item 切换默认仓库为国内镜像（如 TUNA）可加速今后升级
-      \end{itemize}
-    \item macOS
-      \begin{itemize}
-        \item 需要下载独立的安装包 \link{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg}
-      \end{itemize}
-    \item Linux
-      \begin{itemize}
-        \item 不推荐从发行版仓库直接安装（更新缓慢）
-        \item 图形安装界面需要 Perl Tk 模块
-          \begin{lstlisting}
-yum install perl-Tk 或 apt-get install perl-tk
-sudo mkdir /usr/local/texlive
-sudo chown yourname:yourname /usr/local/texlive
-./install-tl -gui -repository \
-  https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/
-        \end{lstlisting}
-      \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{\TL 安装后配置（仅 Linux）}
-  \begin{itemize}
-    \item
-      添加环境变量到 shell 配置（如 \nolinkurl{~/.bashrc}）：
-      \begin{lstlisting}[language=bash]
-export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$PATH
-export MANPATH=/usr/local/texlive/2026/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2026/texmf-dist/doc/info:$INFOPATH
-      \end{lstlisting}
-  \item
-    阅读 \TeXLive 指南中文版 |texlive-zh-cn.pdf|，
-    关注第 3.4 节：
-      \begin{lstlisting}[basicstyle=\ttfamily]
-texdoc texlive-zh
-      \end{lstlisting}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{安装后配置（仅 Linux）}
-  \begin{itemize}
-  \item
-    \XeTeX\ 系统字体配置
-    \begin{lstlisting}[language=bash]
-cp /usr/local/texlive/2026/texmf-var/fonts/conf/texlive-fontconfig.conf \
-  /etc/fonts/conf.d/09-texlive.conf
-fc-cache -fsv
-    \end{lstlisting}
-  \item 安装一个 dummy package，让系统的包管理器知道 \TL 已经装过了
-    \begin{itemize}
-      \item Arch Linux 用户装 AUR 里的 \verb|texlive-dummy|
-      \item Debian/Ubuntu 用户参照手册做一个包即可 \link{https://www.tug.org/texlive/debian.html\#vanilla}
-      \item Fedora 用户可以直接下载 \link{https://copr.fedoraproject.org/coprs/fatka/texlive-dummy/}
-    \end{itemize}
-  \item 部分教程可参考:
-    \link{https://zhuanlan.zhihu.com/p/20069414}
-    \link{https://stone-zeng.github.io/2018-05-13-install-texlive-ubuntu/}
-  \end{itemize}
-\end{frame}
+% \begin{frame}{如何安装 \hologo{(La)TeX}？}
+%   \begin{itemize}
+%     \item \TeX{}发行版（Distro）
+%       \begin{itemize}
+%         \item \TeX{}实用工具大集合：引擎、宏包、文档等
+%         \item 常见\TeX{}发行版：
+%           \alert{\TL{} / \MacTeX}, \CTeX, \MiKTeX
+%       \end{itemize}
+%     \item \TL
+%       \begin{itemize}
+%         \item 跨平台：Windows、Linux、macOS（二次打包后称为 \MacTeX）
+%         \item 每年四月左右发布以年份命名的新版本，当前为 \TL \TLVersion
+%       \end{itemize}
+%     \item \MiKTeX
+%       \begin{itemize}
+%         \item 最早专为 Windows 开发，现亦有 Linux 和 macOS 版本
+%         \item 由 Christian Schenk 个人维护，轻量安装，滚动更新
+%       \end{itemize}
+%     \item \CTeX
+%       \begin{itemize}
+%         \item 中科院吴凌云研究员基于 \MiKTeX 开发，并集成了 WinEdt 等工具
+%         \item 在早期极大地方便了 Windows 上的中文 \TeX 用户
+%         \item 2012-2022 年间暂停开发，近年已恢复更新，最新为 3.1 系列
+%       \end{itemize}
+%   \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}[fragile]
+%   \frametitle{下载 \TL}
+%   \begin{itemize}
+%     \item 注意!
+%       \begin{itemize}
+%         \item Windows 下不要放在带有中文的路径中
+%       \end{itemize}
+%     \item 离线安装镜像（约 6GB 大小）
+%       \begin{itemize}
+%         \item {\footnotesize
+%           \url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}}
+%       \end{itemize}
+%     \item 在线安装包 （和相应的校验文件，以 .sha256 结尾）
+%       \begin{itemize} % several mirror url
+%         \item {\footnotesize
+%           \url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/}
+%         }
+%         \item 更多可见 \url{https://ctan.org/mirrors}
+%       \end{itemize}
+% 
+%     \item 可选步骤：校验安装包
+%       \begin{lstlisting}[language=tex]
+% LANG=C sha256sum --check install-tl-unx.tar.gz.sha256
+% install-tl-unx.tar.gz: OK
+%       \end{lstlisting}
+% 
+%   \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}[fragile]
+%   \frametitle{安装 \TL}
+%   \begin{itemize}
+%     \item Windows
+%       \begin{itemize}
+%         \item 解压或挂载下载的 ISO，运行 |install-tl-windows.bat|
+%         \item 切换默认仓库为国内镜像（如 TUNA）可加速今后升级
+%       \end{itemize}
+%     \item macOS
+%       \begin{itemize}
+%         \item 需要下载独立的安装包 \link{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg}
+%       \end{itemize}
+%     \item Linux
+%       \begin{itemize}
+%         \item 不推荐从发行版仓库直接安装（更新缓慢）
+%         \item 图形安装界面需要 Perl Tk 模块
+%           \begin{lstlisting}
+% yum install perl-Tk 或 apt-get install perl-tk
+% sudo mkdir /usr/local/texlive
+% sudo chown yourname:yourname /usr/local/texlive
+% ./install-tl -gui -repository \
+%   https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/
+%         \end{lstlisting}
+%       \end{itemize}
+% \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}[fragile]
+%   \frametitle{\TL 安装后配置（仅 Linux）}
+%   \begin{itemize}
+%     \item
+%       添加环境变量到 shell 配置（如 \nolinkurl{~/.bashrc}）：
+%       \begin{lstlisting}[language=bash]
+% export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$PATH
+% export MANPATH=/usr/local/texlive/2026/texmf-dist/doc/man:$MANPATH
+% export INFOPATH=/usr/local/texlive/2026/texmf-dist/doc/info:$INFOPATH
+%       \end{lstlisting}
+%   \item
+%     阅读 \TeXLive 指南中文版 |texlive-zh-cn.pdf|，
+%     关注第 3.4 节：
+%       \begin{lstlisting}[basicstyle=\ttfamily]
+% texdoc texlive-zh
+%       \end{lstlisting}
+%   \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}[fragile]
+%   \frametitle{安装后配置（仅 Linux）}
+%   \begin{itemize}
+%   \item
+%     \XeTeX\ 系统字体配置
+%     \begin{lstlisting}[language=bash]
+% cp /usr/local/texlive/2026/texmf-var/fonts/conf/texlive-fontconfig.conf \
+%   /etc/fonts/conf.d/09-texlive.conf
+% fc-cache -fsv
+%     \end{lstlisting}
+%   \item 安装一个 dummy package，让系统的包管理器知道 \TL 已经装过了
+%     \begin{itemize}
+%       \item Arch Linux 用户装 AUR 里的 \verb|texlive-dummy|
+%       \item Debian/Ubuntu 用户参照手册做一个包即可 \link{https://www.tug.org/texlive/debian.html\#vanilla}
+%       \item Fedora 用户可以直接下载 \link{https://copr.fedoraproject.org/coprs/fatka/texlive-dummy/}
+%     \end{itemize}
+%   \item 部分教程可参考:
+%     \link{https://zhuanlan.zhihu.com/p/20069414}
+%     \link{https://stone-zeng.github.io/2018-05-13-install-texlive-ubuntu/}
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}{编辑器配置}
   \begin{itemize}
     \item \TeX{}编辑器
       \begin{itemize}
-        \item 专用编辑器：TeXworks、\alert{TeXstudio}、TeXmaker、WinEdt 等
-        \item 通用编辑器（安装 \LaTeX{} 插件）：Vim、Emacs、\alert{VS Code}、Sublime 等
+        \item 专用编辑器：TeXworks、TeXstudio、TeXmaker、WinEdt 等
+        \item 通用编辑器（安装 \LaTeX{} 插件）：Vim、Emacs、\textbf{VS Code}、Sublime 等
       \end{itemize}
   \end{itemize}
+  \begin{exampleblock}{VS Code 配置}
+    \begin{itemize}
+      \item LaTeX Workshop 插件
+      \item 安装 \texttt{latexmk}
+    \end{itemize}
+  \end{exampleblock}
   \begin{exampleblock}{TeXstudio 配置}
     \begin{itemize}
       \item Options -> Configure TeXstudio
@@ -308,33 +338,33 @@ fc-cache -fsv
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{后期安装或更新宏包}
-  \begin{exampleblock}{很多时候需要自己安装宏包}
-    % \vspace*{-3mm}
-    \begin{itemize}
-      \item 发行版没有预装
-      \item 宏包需要更新（\TL 升级间隔的尴尬时期，或者宏包有重大变化）
-    \end{itemize}
-  \end{exampleblock}
-  % \vspace*{-3mm}
-  \begin{exampleblock}{\TL 或 \MacTeX}
-    % \vspace*{-3mm}
-    \begin{itemize}
-      \item （Windows）开始菜单里找 TeX Live Manager
-      \item 设置仓库地址 |tlmgr option repository| {\footnotesize\ttfamily
-        https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet}
-      \item |tlmgr install <pkgname>| 安装、 |tlmgr update --self --all| 全部更新
-    \end{itemize}
-  \end{exampleblock}
-  % \vspace*{-3mm}
-  \begin{exampleblock}{\CTeX 或 \MiKTeX}
-    % \vspace*{-3mm}
-    \begin{itemize}
-      \item 开始菜单里找 CTeX / MiKTeX -> Package Manager
-      \item 在 WinEdt 里 MiKTeX Options -> Packages
-    \end{itemize}
-  \end{exampleblock}
-\end{frame}
+% \begin{frame}[fragile]{后期安装或更新宏包}
+%   \begin{exampleblock}{很多时候需要自己安装宏包}
+%     % \vspace*{-3mm}
+%     \begin{itemize}
+%       \item 发行版没有预装
+%       \item 宏包需要更新（\TL 升级间隔的尴尬时期，或者宏包有重大变化）
+%     \end{itemize}
+%   \end{exampleblock}
+%   % \vspace*{-3mm}
+%   \begin{exampleblock}{\TL 或 \MacTeX}
+%     % \vspace*{-3mm}
+%     \begin{itemize}
+%       \item （Windows）开始菜单里找 TeX Live Manager
+%       \item 设置仓库地址 |tlmgr option repository| {\footnotesize\ttfamily
+%         https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet}
+%       \item |tlmgr install <pkgname>| 安装、 |tlmgr update --self --all| 全部更新
+%     \end{itemize}
+%   \end{exampleblock}
+%   % \vspace*{-3mm}
+%   \begin{exampleblock}{\CTeX 或 \MiKTeX}
+%     % \vspace*{-3mm}
+%     \begin{itemize}
+%       \item 开始菜单里找 CTeX / MiKTeX -> Package Manager
+%       \item 在 WinEdt 里 MiKTeX Options -> Packages
+%     \end{itemize}
+%   \end{exampleblock}
+% \end{frame}
 
 %\begin{frame}
 %\frametitle{网络安装后测试}
@@ -353,7 +383,7 @@ fc-cache -fsv
 %\end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{安装后测试}
+  \frametitle{Hello \sout{World} \TeX!}
 
   \begin{itemize}
     \item 编辑 \texttt{hello.tex} （Windows 下不要用中文文件名，注意

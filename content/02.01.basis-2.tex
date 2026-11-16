@@ -29,9 +29,43 @@
     \end{columns}
     
     \end{frame}
+
+\begin{frame}[fragile]{交叉引用}
+      \begin{itemize}
+      \item 给对象命名：图片、表格、公式等\\
+      |\label{name}|
+    \item 引用对象\\
+      |\ref{name}|
+      \end{itemize}
+    \bigskip
+    \begin{columns}
+    \begin{column}{.6\textwidth}
+    
+    \begin{lstlisting}[basicstyle=\ttfamily\small]
+    \section{Introduction}
+    See: section \ref{sec:methodology}
+    \subsection{Background}
+    \label{sec:intro:bg}
+    \section{Methodology}
+    \label{sec:methodology}
+    See: section \ref{sec:intro:bg}
+    \end{lstlisting}
+    \end{column}
+    \begin{column}{.4\textwidth}
+    1. Introduction \\
+    See: section 2 \\
+    1.1 Background \\
+    2. Methodology \\
+    See: section 1.1
+    \end{column}
+    \end{columns}
+
+    \texttt{\\usepackage\{hyperref\}} 会给目录和交叉引用加上超链接。
+    
+    \end{frame}
     
     
-    \begin{frame}[fragile]{列表与枚举}
+    \begin{frame}[fragile]{有序列表,无序列表与枚举}
     \begin{columns}
     \begin{column}{.6\textwidth}
     \begin{lstlisting}[basicstyle=\ttfamily\small]
@@ -73,13 +107,6 @@
     
     
     \begin{frame}[fragile]{交叉引用与插入插图}
-      \begin{itemize}
-      \item 给对象命名：图片、表格、公式等\\
-      |\label{name}|
-    \item 引用对象\\
-      |\ref{name}|
-      \end{itemize}
-    \bigskip
     
       \begin{minipage}{0.7\linewidth}
         \begin{lstlisting}
@@ -133,6 +160,16 @@
       \end{columns}
     \end{frame}
     
+    \begin{frame}[fragile]{表格绘制}
+      \begin{itemize}
+        \item Overleaf 最新版本中的 "Visual mode"
+        \item 使用 \pkg{booktabs}、\pkg{longtable}、\pkg{multirow} 等宏包
+        \item 手动绘制表格确实比较令人头疼，且较难维护
+        \item 有编程基础可以使用 Python、R 等语言生成表格代码
+        \item 推荐使用在线工具绘制后导出代码：\LaTeX{} Table Generator \link{https://www.tablesgenerator.com/latex_tables}
+      \end{itemize}
+    \end{frame}
+    
     \begin{frame}[fragile]{浮动体}
     \begin{itemize}
     \item 初学者最“捉摸不透”的特性之一 \link{https://liam.page/2017/03/11/floats-in-LaTeX-basic}
@@ -181,15 +218,6 @@
                         \link{https://tex.stackexchange.com/q/72930}
       \end{itemize}
     \end{frame}
-    
-    \begin{frame}[fragile]{表格绘制}
-      \begin{itemize}
-        \item 使用 \pkg{booktabs}、\pkg{longtable}、\pkg{multirow} 等宏包
-        \item 手动绘制表格确实比较令人头疼，且较难维护
-        \item 有编程基础可以使用 Python、R 等语言生成表格代码
-        \item 推荐使用在线工具绘制后导出代码：\LaTeX{} Table Generator \link{https://www.tablesgenerator.com/latex_tables}
-      \end{itemize}
-    \end{frame}
 
     \begin{frame}[fragile]{引用和参考文献}
       \begin{columns}
@@ -222,6 +250,35 @@
         \item \BibTeX{} 可生成各种不同格式的引用和参考文献（需要宏包支持）：APA、MLA、GB/T 7714 等
         \end{itemize}
     \end{frame}
+
+\begin{frame}[fragile]{\LaTeX{} 常用命令}
+  \begin{exampleblock}{简单命令}
+\centering
+\footnotesize
+  \begin{tabular}{llll}
+    \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
+    章 & 节 & 小节 & 带题头段落 \\\hline
+    \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
+   居中对齐         &  强调      & 原样输出   & 超链接 \\\hline
+  \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
+   脚注 & 列表条目 & 标题 & 插入图片 \\\hline
+  \cmd{label} & \cmd{cite} & \cmd{ref} \\
+  标号 & 引用参考文献 & 引用图表公式等\\\hline
+  \end{tabular}
+\end{exampleblock}
+\end{frame}
+\begin{frame}[fragile]{\LaTeX{} 常用命令}
+\begin{exampleblock}{环境}
+\centering
+\footnotesize
+\begin{tabular}{lll}
+  \env{table} & \env{figure} & \env{equation}\\
+  表格 & 图片 & 公式 \\\hline
+  \env{itemize} & \env{enumerate} & \env{description}\\
+  无编号列表 & 编号列表 & 描述 \\\hline
+\end{tabular}
+\end{exampleblock}
+\end{frame}
     
     \begin{frame}[fragile]
       \frametitle{宏包推荐（\textbf{先读文档}后使用）}
@@ -311,6 +368,24 @@
         \end{itemize}
       \end{multicols}
       \vspace*{-0.5cm}
+    \end{frame}
+
+    \begin{frame}[fragile]
+      \frametitle{自定义命令！}
+
+      \begin{columns}
+      \begin{column}{.6\textwidth}
+      \begin{lstlisting}[basicstyle=\ttfamily\small]
+\newcommand\todo[1]{\textcolor{red}{\textbf{TODO: #1}}}
+
+\todo{添加关于自定义命令的内容！}
+      \end{lstlisting}
+      \end{column}
+      \begin{column}{.4\textwidth}
+      \newcommand\todo[1]{\textcolor{red}{\textbf{TODO: #1}}}
+      \todo{添加关于自定义命令的内容！}
+      \end{column}
+      \end{columns}
     \end{frame}
 
 %%% vim: set sw=2 isk+=\: et tw=80 cc=+1 formatoptions+=mM:
